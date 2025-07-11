@@ -15,14 +15,18 @@ export function SearchBar() {
 	function handleSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
 		const term = searchQuery.trim() //убирает пробелы с начала и конца строки
-		if (term) {
-			const encoded = encodeURIComponent(term) //кодирует строку
-			navigate(`${pathname}?search=${encoded}`)
-		}
+		if (!term) return
+
+		const encoded = encodeURIComponent(term)//кодирует строку
+		navigate(`/movies/search/${encoded}/1`) //попадаем на 1 страницу поиска
 	}
 
 	return (
-		<form onSubmit={handleSubmit} className="flex items-center bg-white dark:bg-gray-800 rounded shadow px-4 py-2 mx-8 w-full">
+		<form
+			onSubmit={handleSubmit}
+			className="flex items-center bg-white dark:bg-gray-800 rounded shadow px-4 py-2 mx-8 w-full"
+			role="search"
+		>
 			<Input
 				className="w-full bg-transparent focus:outline-none placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100"
 				type="text"

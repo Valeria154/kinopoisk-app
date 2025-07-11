@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, type RouteObject } from 'react-router'
 import { Home } from './pages/Home'
 import { MoviePage } from './pages/MoviePage'
 import { FavoritePage } from './pages/FavoritePage'
+import { SearchPage } from './pages/SearchPage'
 
 const routes: RouteObject[] = [
 	{
@@ -23,10 +24,10 @@ const routes: RouteObject[] = [
 						path: '/movies/favorite/:currentPage',
 						element: <FavoritePage />
 					},
-					// {
-					// 	path: '/movies/search-result/:query/:currentPage',
-					// 	element: <SearchResult />
-					// },
+					{
+						path: '/movies/search/:query/:currentPage',
+						element: <SearchPage />
+					},
 				]
 			},
 			{
