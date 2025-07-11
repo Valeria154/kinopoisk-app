@@ -1,1 +1,1 @@
-# kinopoisk-app
+# pixema-app
