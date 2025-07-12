@@ -13,11 +13,24 @@ export interface MovieType {
 	countries: { country: string }[]
 	description?: string
 	ratingAgeLimits?: string
+	query: string
+
 }
 
 export interface MoviesListResponse {
-	total: number
 	totalPages: number
 	items: MovieType[]
+}
+
+export interface SearchResponse {
+	totalPages: number
+	films: MovieType[]
+}
+
+export interface SearchState {
+	results: MovieType[]
+	totalPages: number
+	isLoading: boolean
+	error: string | null
 }
 
